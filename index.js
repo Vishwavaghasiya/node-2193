@@ -15,7 +15,7 @@ http.createServer(function(req,res){
 var express = require('express');
 var app = express();
 
-console.log('welcome to express');
+console.log('welcome to');
 app.get('/' , (req,res) => {
     res.send('express server is running now')
     console.warn('now you are using express');
