@@ -1,25 +1,22 @@
-// product_model
-/*----------------
-    require mongoose
-------------------*/
+/*-----
+    product.model
+-------*/
+//require mongoose
 const mongoose = require("mongoos");
 
 const productSchema = new mongoose.productSchema(
     {
         product_type: {
-            // type : String
-            type: 'digitalProduct',
+            type : String,
             trim: true
         },
         product_name: {
-            // type : String
-            name: 'Smartphone',
+            type : String,
             // To remove excess space
             trim: true
         },
         price: {
-            // type : Number
-            price: 500,
+            type : Number,
             trim: true
         }
     }

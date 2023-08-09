@@ -1,4 +1,7 @@
-// category_model
+/*-----
+    category.model
+-------*/
+//require mongoose
 const mongoose = require("mongoose");
 
 const categorySchema = new mongoose.Schema(
