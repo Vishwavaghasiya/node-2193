@@ -8,6 +8,11 @@ const envVarsSchema = joi.object({
     MONGODB_URL: joi.string().trim().description("Mongodb url"),
 }).unknown();
 
+// const data = envVarsSchema
+//     .prefs({ errors: { label: "key" } })
+//     .validate(process.env);
+// console.log(data);
+
 const { value: envVars, error } = envVarsSchema
     .prefs({ errors: { label: "key" } })
     .validate(process.env);

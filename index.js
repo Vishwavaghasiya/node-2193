@@ -1,6 +1,7 @@
 const http = require('http');
 const express = require("express");
 const { connectDB } = require("./src/db/dbConnection");
+const routes = require("./src/routes/v1")
 const config = require("./src/config/config")
 
 const app = express();
@@ -24,3 +25,6 @@ const server = http.createServer(app);
 server.listen(config.port, () => {
     console.log("server listning port number 3000!");
 });
+
+/** Routes with Namespace (/v1) */
+app.use("/v1" , routes);
