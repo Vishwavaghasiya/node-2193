@@ -1,6 +1,6 @@
 const express = require("express");
-const { userValidation } = require("../../controllers");
-const validate = require("../../middlewares/validate");
+// const userValidation = require("../../validation").userValidation;
+const userController = require("../../controllers").userController;
 
 const router = express.Router();
 
@@ -8,23 +8,16 @@ const router = express.Router();
 // using post method
 router.post(
     "/create-user",
-    validate(userValidation.createUser),
+    // validate(userValidation.createUser),
     userController.createUser
-  );
-/** get user list */
-// using get method
-router.get(
-    "/list",
-    validate(userValidation.getUserList),
-    userController.getUserList
 );
 
-/** get user details by id */
+/** get user list */
 // using get method
 // router.get(
-//     "/get-details/:userId",
-//     validate(userValidation.getDetails),
-//     userController.getDetails
+//     "/list",
+//     validate(userValidation.getUserList),
+//     userController.getUserList
 // );
 
 module.exports = router;

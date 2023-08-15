@@ -1,8 +1,9 @@
 const http = require('http');
 const express = require("express");
+const bodyParser = require("body-parser");
 const { connectDB } = require("./src/db/dbConnection");
-const routes = require("./src/routes/v1")
-const config = require("./src/config/config")
+const routes = require("./src/routes/v1/index");
+const config = require("./src/config/config");
 
 const app = express();
 
@@ -16,6 +17,11 @@ const app = express();
 
 // app.listen(8000);
 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+/** Routes with Namespace (/v1) */
+app.use("/v1" , routes);
+
 /** Database connection */
 connectDB();
 
@@ -25,6 +31,3 @@ const server = http.createServer(app);
 server.listen(config.port, () => {
     console.log("server listning port number 3000!");
 });
-
-/** Routes with Namespace (/v1) */
-app.use("/v1" , routes);
