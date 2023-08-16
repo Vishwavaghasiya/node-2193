@@ -1,3 +1,3 @@
-module.exports.User = require("./category");
+module.exports.Category = require("./category");
 module.exports.Token = require("./product");
-module.exports.Token = require("./user");
+module.exports.User = require("./user");
