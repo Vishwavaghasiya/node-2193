@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-// config file import
 const config = require("../config/config");
 
 const connectDB = async () => {

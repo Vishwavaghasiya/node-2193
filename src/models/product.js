@@ -1,27 +1,30 @@
-// /*-----
-//     product.model
-// -------*/
-// //require mongoose
-// const mongoose = require("mongoose");
+/*-----
+    product.model
+-------*/
+//require mongoose
+const mongoose = require("mongoose");
 
-// const productSchema = new mongoose.Schema(
-//     {
-//         product_type: {
-//             type : String,
-//             trim: true,
-//         },
-//         product_name: {
-//             type : String,
-//             // To remove excess space
-//             trim: true,
-//         },
-//         price: {
-//             type : Number,
-//             trim: true,
-//         }
-//     }
-// );
+const productSchema = new mongoose.Schema(
+    {
+        product_type: {
+            type : String,
+            trim: true,
+        },
+        product_name: {
+            type : String,
+            // To remove excess space
+            trim: true,
+        },
+        price: {
+            type : Number,
+            trim: true,
+        }
+    },
+    {
+        timeStamps : true,
+        versionKey : false,
+    }
+);
 
-// const Product = module.exports = mongoose.model('product', productSchema);
-
-// module.exports = Product;
+const Product = mongoose.model('product', productSchema);
+module.exports = Product;

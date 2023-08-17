@@ -10,5 +10,3 @@ const createUser = async (reqBody) => {
   // console.log(reqBody);
   return User.create(reqBody);
 };
-
-module.exports = { createUser };

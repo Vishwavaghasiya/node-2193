@@ -19,6 +19,7 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
 /** Routes with Namespace (/v1) */
 app.use("/v1" , routes);
 
