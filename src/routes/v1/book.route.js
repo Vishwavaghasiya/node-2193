@@ -6,7 +6,11 @@ const router = express.Router();
 /** get book details */
 router.post(
     "/book-data",
-    bookController.getBook
+    bookController.createBook
 );
 
+router.get(
+    "/book-list",
+    bookController.getBookList
+)
 module.exports = router;
