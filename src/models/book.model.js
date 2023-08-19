@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const createBookDetails = new mongoose.Schema(
+const bookSchema = new mongoose.Schema(
     {
         book_name: {
             type: String,
@@ -10,13 +10,13 @@ const createBookDetails = new mongoose.Schema(
             type: String,
             trim: true,
         },
-        language : {
-            type : String,
-            trim : true,
+        language: {
+            type: String,
+            trim: true,
         },
-        review : {
-            type : String,
-            trim : true,
+        review: {
+            type: String,
+            trim: true,
         },
         price: {
             type: Number,
@@ -33,5 +33,5 @@ const createBookDetails = new mongoose.Schema(
     },
 );
 
-const Book = mongoose.model('book', createBookDetails);
+const Book = mongoose.model('book', bookSchema);
 module.exports = Book
