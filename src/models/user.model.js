@@ -18,10 +18,10 @@ const userSchema = new mongoose.Schema(
             type: String,
             trim: true,
         },
-        password: {
-            type: String,
-            trim: true,
-        },
+        // password: {
+        //     type: String,
+        //     trim: true,
+        // },
         address: {
             type: String,
             trim: true,
@@ -32,8 +32,8 @@ const userSchema = new mongoose.Schema(
         },
     },
     {
-        timestamps : true,
-        versionKey : false,
+        timestamps: true,
+        versionKey: false,
     }
 );
 

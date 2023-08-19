@@ -4,8 +4,6 @@ const { userService } = require("../services");
 const createUser = async (req, res) => {
     try {
         const reqBody = req.body;
-        console.log(reqBody , "+++++++++");
-
         const user = await userService.createUser(reqBody);
         if (!user) {
             throw new Error("Something went wrong, please try again or later!");
@@ -13,11 +11,11 @@ const createUser = async (req, res) => {
 
         res.status(200).json({
             success: true,
-            message: reqBody,
-            data: { reqBody },
+            message: "User create successfully",
+            data: { user },
         });
     } catch (error) {
-        res.status(400).json({ success: false, message: error.message });
+        res.status(400).json({ success:false, message:error.message });
     }
 };
 

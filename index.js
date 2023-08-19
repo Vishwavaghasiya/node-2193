@@ -21,18 +21,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 /** Routes with Namespace (/v1) */
-app.use("/v1" , routes);
+app.use("/v1", routes);
 
 app.use((req, res, next) => {
-    next(new Error("Route not found!"));
-  });
-
-/** Database connection */
-connectDB();
+  next(new Error("Route not found!"));
+});
 
 /** create server using http */
 const server = http.createServer(app);
 
+/** Database connection */
+connectDB();
+
 server.listen(config.port, () => {
-    console.log("server listning port number 3000!");
+  console.log("server listning port number 3000!");
 });
