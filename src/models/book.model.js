@@ -14,6 +14,10 @@ const createBookDetails = new mongoose.Schema(
             type : String,
             trim : true,
         },
+        review : {
+            type : String,
+            trim : true,
+        },
         price: {
             type: Number,
             trim: true,

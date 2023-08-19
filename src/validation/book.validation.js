@@ -7,6 +7,7 @@ const getBook = {
             auther_name: Joi.string().required().trim(),
             language: Joi.string().required().trim(),
             price: Joi.string().required().trim(),
+            review : Joi.string().required().trim()
         }
     )
 }
