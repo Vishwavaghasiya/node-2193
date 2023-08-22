@@ -7,7 +7,7 @@ const config = require("./src/config/config");
 
 const app = express();
 
-/** express using server **/
+/** create server using express **/
 // console.log('hello ! server');
 // app.get('/' , (req,res) => {
 //     res.send('express server is running now')
