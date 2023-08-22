@@ -7,16 +7,6 @@ const config = require("./src/config/config");
 
 const app = express();
 
-/** create server using express **/
-// console.log('hello ! server');
-// app.get('/' , (req,res) => {
-//     res.send('express server is running now')
-//     console.warn('now you are using express');
-//     res.end();
-// });
-
-// app.listen(8000);
-
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 

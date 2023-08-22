@@ -22,7 +22,11 @@ const bookSchema = new mongoose.Schema(
             type: Number,
             trim: true,
         },
-        createdAt: {
+        publisher : {
+            type : String,
+            trim : true
+        },
+        is_active: {
             type: Boolean,
             default: true,
         }

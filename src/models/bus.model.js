@@ -18,10 +18,6 @@ const busSchema = new mongoose.Schema(
             type: String,
             trim: true,
         },
-        seatsAvailable: {
-            type: Number,
-            trim: true,
-        },
         departureTime: {
             type: String,
             trim: true,

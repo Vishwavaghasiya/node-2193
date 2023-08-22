@@ -18,18 +18,6 @@ const grocerySchema = new mongoose.Schema(
             type : String,
             trim : true,
         },
-        unit : {
-            type : String,
-            trim :true,
-        },
-        pricePerUnit : {
-            type : Number,
-            trim : true,
-        },
-        totalPrice : {
-            type : Number,
-            trim : true,
-        },
         expirationDate : {
             type : String,
             trim : true,

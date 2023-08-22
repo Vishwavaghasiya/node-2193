@@ -1,6 +1,3 @@
-/*-----
-    category.model
--------*/
 const mongoose = require("mongoose");
 
 const categorySchema = new mongoose.Schema(
@@ -16,7 +13,7 @@ const categorySchema = new mongoose.Schema(
         is_active: {
             type: Boolean,
             default: true,
-        },
+        }
     },
     {
         timestamps: true,

@@ -1,27 +1,24 @@
 const { Book } = require("../models");
 
-/**
- * create book(list API)
- * @param {object} reqBody
- * @returns {Promise<User>}
- */
-
 const createBook = async (reqBody) => {
-  // console.log(reqBody);
   return Book.create(reqBody);
 };
 
-/**
- * Get book list
- * @param {object} filter
- * @param {object} options
- * @returns {Promise<User>}
- */
-const getBookList = async (filter, options) => {;
-  return Book.find(filter);
+const getBookList = async (filter, options) => {
+  return Book.find();
+};
+
+const deleteBook = async (bookId) => {
+  return Book.findByIdAndDelete(bookId);
+};
+
+const getBookById = async (bookId) => {
+  return Book.findById(bookId);
 };
 
 module.exports = {
   createBook,
-  getBookList
+  getBookList,
+  deleteBook,
+  getBookById,
 }

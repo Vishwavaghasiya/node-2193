@@ -12,7 +12,6 @@ const productSchema = new mongoose.Schema(
         },
         product_name: {
             type : String,
-            // To remove excess space
             trim: true,
         },
         price: {
