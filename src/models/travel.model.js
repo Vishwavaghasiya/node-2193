@@ -1,3 +1,4 @@
+const { date } = require('joi');
 const mongoose = require('mongoose');
 
 const travelSchema = new mongoose.Schema(
@@ -27,10 +28,12 @@ const travelSchema = new mongoose.Schema(
             trim : true,
             checkInDate : {
                 type : String,
+                format : date,
                 trim : true,
             },
             checkOutDate : {
                 type : String,
+                format : date,
                 trim : true,
             }
         },
