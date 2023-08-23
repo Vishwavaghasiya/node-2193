@@ -4,7 +4,7 @@ const createGrocery = async (reqBody) => {
     return Grocery.create(reqBody);
 };
 
-const getGroceryList = async (filter,option) => {
+const getGroceryList = async (req , res) => {
     return Grocery.find();
 };
 

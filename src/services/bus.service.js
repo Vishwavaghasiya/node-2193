@@ -4,7 +4,7 @@ const createBus = async (reqBody) => {
     return Bus.create(reqBody);
 };
 
-const getBusList = async (filter,option) => {
+const getBusList = async (req,res) => {
     return Bus.find();
 };
 

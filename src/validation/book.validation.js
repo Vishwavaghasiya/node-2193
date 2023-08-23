@@ -13,7 +13,7 @@ const getBook = {
     )
 }
 
-/** get book */
+/** get book list */
 const getBookList = {
     query : Joi.object().keys({
         search : Joi.string().required().trim(),

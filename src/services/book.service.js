@@ -4,7 +4,7 @@ const createBook = async (reqBody) => {
   return Book.create(reqBody);
 };
 
-const getBookList = async (filter, options) => {
+const getBookList = async (req, res) => {
   return Book.find();
 };
 
