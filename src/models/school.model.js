@@ -2,23 +2,23 @@ const mongoose = require('mongoose');
 
 const schoolSchema = new mongoose.Schema(
     {
-        schoolName: {
-            type: String,
-            trim: true,
-        },
-        address: {
-            type: String,
-            trim: true,
-        },
-        principal: {
-            type: String,
-            trim: true,
-        },
+        // schoolName: {
+        //     type: String,
+        //     trim: true,
+        // },
+        // address: {
+        //     type: String,
+        //     trim: true,
+        // },
+        // principal: {
+        //     type: String,
+        //     trim: true,
+        // },
         students: {
             type: String,
             trim: true,
             age: {
-                type: Number,
+                type: String,
                 trim: true,
             },
             grade: {
@@ -26,14 +26,14 @@ const schoolSchema = new mongoose.Schema(
                 trim: true,
             }
         },
-        teachers: {
-            type: String,
-            trim: true,
-            subjects : {
-                type : String,
-                trim : true,
-            },
-        },
+        // teachers: {
+        //     type: String,
+        //     trim: true,
+        //     subjects : {
+        //         type : String,
+        //         trim : true,
+        //     },
+        // },
         is_active : {
             type : Boolean,
             default : true,

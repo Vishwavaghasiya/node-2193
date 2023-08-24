@@ -6,3 +6,5 @@ module.exports.jewelleryService = require("./jewellery.service");
 module.exports.groceryService = require("./grocery.service");
 module.exports.movieService = require("./movie.service");
 module.exports.musicService = require("./music.service");
+module.exports.pharmacyService = require("./pharmacy.service");
+module.exports.schoolService = require("./school.service")

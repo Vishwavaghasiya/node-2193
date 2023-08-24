@@ -3,22 +3,20 @@ const Joi = require('joi');
 const createSchool = {
     body: Joi.object().keys(
         {
-            schoolName: Joi.string().required().trim(),
-            address: Joi.string().required().trim(),
-            principal: Joi.string().required().trim(),
+            // schoolName: Joi.string().required().trim(),
+            // address: Joi.string().required().trim(),
+            // principal: Joi.string().required().trim(),
             students: Joi.array().items(
                 Joi.object({
-                    type: Joi.string().required().trim(),
-                    age: Joi.number().required().trim(),
-                    grade: Joi.string().required().trim(),
+                    age: Joi.number().required(),
+                    grade: Joi.string().required().trim()
                 })
             ),
-            teachers: Joi.array().items(
+            teachers:Joi.array().items(
                 Joi.object({
-                    type: Joi.string().required().trim(),
-                    subjects: Joi.array().items(Joi.string().required().trim()).required(),
+                    subjects: Joi.array().items(Joi.string().required().trim()).required()
                 })
-            ),
+            )
         }
     )
 }

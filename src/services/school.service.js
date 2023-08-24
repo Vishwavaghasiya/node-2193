@@ -1,0 +1,24 @@
+const { School } = require("../models");
+
+const createSchool = async (reqBody) => {
+    return School.create(reqBody);
+}
+
+const getSchoolList = async (req, res) => {
+    return School.find();
+}
+
+const deleteRecord = async (schoolId) => {
+    return School.findByIdAndDelete(schoolId);
+}
+
+const schoolById = async (schoolId) => {
+    return School.findById(schoolId);
+}
+
+module.exports = {
+    createSchool,
+    getSchoolList,
+    deleteRecord,
+    schoolById
+}
