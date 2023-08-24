@@ -18,4 +18,4 @@ router.delete(
     jewelleryController.deleteRecord
 )
 
-module.exports = router
+module.exports = router;

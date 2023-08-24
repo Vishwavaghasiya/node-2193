@@ -3,7 +3,7 @@ const { movieService } = require('../services');
 /** create movie controller */
 const createMovie = async (req, res) => {
     try {
-        const reqBody = req.Body;
+        const reqBody = req.body;
 
         const movie = await movieService.createMovie(reqBody);
         if (!movie) {
@@ -48,10 +48,12 @@ const getMovieList = async (req, res) => {
 const deleteRecord = async (req, res) => {
     try {
         const movieId = req.params.movieId;
-        const movieExist = await movieService.deleteRecord(movieId);
+        const movieExist = await movieService.getMovieList(movieId);
         if (!movieExist) {
             throw new Error("Movie not found !");
         }
+
+        await movieService.deleteRecord(movieId);
 
         res.status(200).json(
             {

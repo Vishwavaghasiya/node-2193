@@ -8,7 +8,7 @@ const getMovieList = async (req,res) => {
     return Movie.find();
 };
 
-const deleteMovie = async (movieId) => {
+const deleteRecord = async (movieId) => {
     return Movie.findByIdAndDelete(movieId);
 };
 
@@ -19,6 +19,6 @@ const getMovieById = async (movieId) => {
 module.exports = {
     createMovie,
     getMovieList,
-    deleteMovie,
+    deleteRecord,
     getMovieById
 }

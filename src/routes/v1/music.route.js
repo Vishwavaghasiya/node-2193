@@ -1,21 +1,21 @@
-// const express = require('express');
-// const { musicController } = require('../../controllers');
+const express = require('express');
+const { musicController } = require('../../controllers');
 
-// const router = express.Router();
+const router = express.Router();
 
-// router.post(
-//     "/music-data",
-//     musicController.createMusic
-// );
+router.post(
+    "/music-data",
+    musicController.createMusic
+);
 
-// router.get(
-//     "/music-list",
-//     musicController.getMusicList
-// );
+router.get(
+    "/music-list",
+    musicController.getMusicList
+);
 
-// router.delete(
-//     "/delete-music/:musicId",
-//     musicController.deleteRecord
-// );
+router.delete(
+    "/delete-music/:musicId",
+    musicController.deleteRecord
+);
 
-// module.exports = router;
+module.exports = router;

@@ -3,7 +3,7 @@ const { jewelleryService } = require('../services');
 /** create jewellery module */
 const createJewellery = async (req, res) => {
     try {
-        const reqBody = req.Body;
+        const reqBody = req.body;
 
         const jewellery = await jewelleryService.createJewellery(reqBody);
         if (!jewellery) {
@@ -14,7 +14,7 @@ const createJewellery = async (req, res) => {
             {
                 success: true,
                 message: "Jewellery module create Successfully !!",
-                data: { jewellery },
+                data:{ jewellery }
             }
         );
 
@@ -25,7 +25,7 @@ const createJewellery = async (req, res) => {
     }
 };
 
-/** list of jewellery module */
+/** list of jewellery data */
 const getJewelleryList = async (req, res) => {
     try {
         const getList = await jewelleryService.getJewelleryList(req, res);

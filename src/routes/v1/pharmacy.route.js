@@ -1,21 +1,21 @@
-// const express = require('express');
-// const { pharmacyController } = require('../../controllers');
+const express = require('express');
+const { pharmacyController } = require('../../controllers');
 
-// const router = express.Router();
+const router = express.Router();
 
-// router.post(
-//     "/pharmacy-data",
-//     pharmacyController.createPharmacy
-// );
+router.post(
+    "/pharmacy-data",
+    pharmacyController.createPharmacy
+);
 
-// router.get(
-//     "/pharmacy-list",
-//     pharmacyController.getPharmacyList
-// );
+router.get(
+    "/pharmacy-list",
+    pharmacyController.getPharmacyList
+);
 
-// router.delete(
-//     "/delete-pharmacy/:pharmacyId",
-//     pharmacyController.deleteRecord
-// );
+router.delete(
+    "/delete-pharmacy/:pharmacyId",
+    pharmacyController.deleteRecord
+);
 
-// module.exports = router;
+module.exports = router;

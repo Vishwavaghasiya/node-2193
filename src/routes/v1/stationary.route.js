@@ -1,21 +1,21 @@
-// const express = require('express');
-// const { stationaryController } = require('../../controllers');
+const express = require('express');
+const { stationaryController } = require('../../controllers');
 
-// const router = express.Router();
+const router = express.Router();
 
-// router.post(
-//     "/stationary-data",
-//     stationaryController.createStationary
-// );
+router.post(
+    "/stationary-data",
+    stationaryController.createStationary
+);
 
-// router.get(
-//     "/stationary-list",
-//     stationaryController.getStationaryList
-// );
+router.get(
+    "/stationary-list",
+    stationaryController.getStationaryList
+);
 
-// router.delete(
-//     "/delete-stationary/:stationaryId",
-//     stationaryController.deleteRecord
-// );
+router.delete(
+    "/delete-stationary/:stationaryId",
+    stationaryController.deleteRecord
+);
 
-// module.exports = router;
+module.exports = router;
