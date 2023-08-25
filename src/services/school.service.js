@@ -5,7 +5,7 @@ const createSchool = async (reqBody) => {
 }
 
 const getSchoolList = async (req, res) => {
-    return School.find();
+    return School.find({ $or: [{ is_active: false }] });
 }
 
 const deleteRecord = async (schoolId) => {

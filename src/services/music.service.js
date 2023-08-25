@@ -1,14 +1,14 @@
-const {Music} = require("../models");
+const { Music } = require("../models");
 
-const createMusic = async(reqBody) => {
+const createMusic = async (reqBody) => {
     return Music.create(reqBody);
 }
 
-const getMusicList = async(req , res) => {
-    return Music.find();
+const getMusicList = async (req, res) => {
+    return Music.find({ $or: [{ is_active: false }] });
 }
 
-const deleteRecord = async(musicId) => {
+const deleteRecord = async (musicId) => {
     return Music.findByIdAndDelete(musicId);
 }
 

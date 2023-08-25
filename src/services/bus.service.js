@@ -4,8 +4,8 @@ const createBus = async (reqBody) => {
     return Bus.create(reqBody);
 };
 
-const getBusList = async (req,res) => {
-    return Bus.find();
+const getBusList = async (req, res) => {
+    return Bus.find({ $or: [{ is_active: false }] });
 };
 
 const deleteBus = async (busId) => {
