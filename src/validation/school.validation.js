@@ -3,9 +3,9 @@ const Joi = require('joi');
 const createSchool = {
     body: Joi.object().keys(
         {
-            // schoolName: Joi.string().required().trim(),
-            // address: Joi.string().required().trim(),
-            // principal: Joi.string().required().trim(),
+            schoolName: Joi.string().required().trim(),
+            address: Joi.string().required().trim(),
+            principal: Joi.string().required().trim(),
             students: Joi.array().items(
                 Joi.object({
                     age: Joi.number().required(),

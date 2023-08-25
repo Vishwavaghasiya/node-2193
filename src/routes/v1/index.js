@@ -10,8 +10,8 @@ const movieRoute = require('./movie.route');
 const musicRoute = require('./music.route');
 const pharmacyRoute = require('./pharmacy.route');
 const schoolRoute = require('./school.route');
-// const stationaryRoute = require('./stationary.route');
-// const travelRoute = require('./travel.route');
+const stationaryRoute = require('./stationary.route');
+const travelRoute = require('./travel.route');
 
 const router = express.Router();
 
@@ -25,7 +25,7 @@ router.use("/movie" , movieRoute);
 router.use("/music" , musicRoute);
 router.use("/pharmacy" , pharmacyRoute);
 router.use("/school" , schoolRoute);
-// router.use("/stationary" , stationaryRoute);
-// router.use("/travel" , travelRoute);
+router.use("/stationary" , stationaryRoute);
+router.use("/travel" , travelRoute);
 
 module.exports = router;

@@ -44,7 +44,7 @@ const deleteRecord = async (req , res) => {
 
         const schoolExist = await schoolService.getSchoolList(schoolId);
         if(!schoolExist){
-            throw new Error("Try again !!");
+            throw new Error("School not found!!");
         }
 
         await schoolService.deleteRecord(schoolId);

@@ -1,6 +1,6 @@
 const http = require('http');
 const express = require("express");
-const cors = require("cors");
+// const cors = require("cors");
 const bodyParser = require("body-parser");
 const { connectDB } = require("./src/db/dbConnection");
 const routes = require("./src/routes/v1/index");
@@ -12,8 +12,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 /** enable cors */
-app.use(cors());
-app.options("*", cors());
+// app.use(cors());
+// app.options("*", cors());
 
 /** Routes with Namespace (/v1) */
 app.use("/v1", routes);
