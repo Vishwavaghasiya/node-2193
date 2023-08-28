@@ -1,11 +1,14 @@
 const express = require('express');
-const { bookController } = require('../../controllers');
+const { bookValidation } = require("../../validation");
+const { bookController } = require("../../controllers");
+const validate = require("../../middlewares/validate");
 
 const router = express.Router();
 
 /** create book */
 router.post(
     "/book-data",
+    validate(bookValidation.getBook),
     bookController.createBook
 );
 

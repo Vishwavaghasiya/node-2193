@@ -5,7 +5,7 @@ const createJewellery = async (reqBody) => {
 };
 
 const getJewelleryList = async (req, res) => {
-    return Jewellery.find({ $or: [{ is_active: false }] });
+    return Jewellery.find({ $or: [{ is_active: true }] });
 };
 
 const deleteJewellery = async (jewelleryId) => {

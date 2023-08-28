@@ -12,3 +12,4 @@ module.exports.School = require('./school.model');
 module.exports.Stationary = require('./stationary.model');
 module.exports.Travel = require('./travel.model');
 module.exports.User = require('./user.model');
+module.exports.Mobile = require('./mobile.model');

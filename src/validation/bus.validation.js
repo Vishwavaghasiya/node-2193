@@ -1,27 +1,27 @@
-// const Joi = require('joi');
+const Joi = require('joi');
 
-// /** create bus */
-// const createBus = {
-//     body : Joi.object().keys({
-//         busName : Joi.string().required().trim(),
-//         busNumber : Joi.string().required().trim(),
-//         driverName : Joi.string().required().trim(),
-//         departureTime : Joi.string().required().trim(),
-//         arrivalTime : Joi.string().required().trim()
-//     }),
-// };
+/** create bus */
+const getBus = {
+    body : Joi.object().keys({
+        busName : Joi.string().required().trim(),
+        busNumber : Joi.string().required().trim(),
+        driverName : Joi.string().required().trim(),
+        departureTime : Joi.string().required().trim(),
+        arrivalTime : Joi.string().required().trim()
+    }),
+};
 
-// /** get bus list */
-// const getBusList = {
-//     query : Joi.object().keys({
-//         search : Joi.string().required().trim(),
-//         sortBy : Joi.string().required().trim(),
-//         limit : Joi.string().required().trim(),
-//         page : Joi.string().required().trim()
-//     }),
-// };
+/** get bus list */
+const getBusList = {
+    query : Joi.object().keys({
+        search : Joi.string().required().trim(),
+        sortBy : Joi.string().required().trim(),
+        limit : Joi.string().required().trim(),
+        page : Joi.string().required().trim()
+    }),
+};
 
-// module.exports = {
-//     createBus,
-//     getBusList
-// }
+module.exports = {
+    getBus,
+    getBusList
+}

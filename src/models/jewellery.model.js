@@ -14,26 +14,26 @@ const jewellerySchema = new mongoose.Schema(
             type : String,
             trim : true,
         },
-        // category : {
-        //     type : String,
-        //     trim : true,
-        // },
-        // material : {
-        //     type : String,
-        //     trim : true,
-        // },
-        // price : {
-        //     type : Number,
-        //     trim : true,
-        // },
-        // availableStock : {
-        //     type : String,
-        //     trim : true,
-        // },
-        // designer : {
-        //     type : String,
-        //     trim : true,
-        // },
+        category : {
+            type : String,
+            trim : true,
+        },
+        material : {
+            type : String,
+            trim : true,
+        },
+        price : {
+            type : Number,
+            trim : true,
+        },
+        availableStock : {
+            type : String,
+            trim : true,
+        },
+        designer : {
+            type : String,
+            trim : true,
+        },
         is_active : {
             type : Boolean,
             trim : true,

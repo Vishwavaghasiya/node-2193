@@ -1,11 +1,14 @@
 const express = require('express');
-const { groceryController } = require('../../controllers');
+const { groceryController } = require("../../controllers");
+const { groceryValidation } = require("../../validation");
+const validate = require("../../middlewares/validate");
 
 const router = express.Router();
 
 /** Create Grocery */
 router.post(
     '/grocery-data',
+    validate(groceryValidation.createGrocery),
     groceryController.createGrocery
 );
 

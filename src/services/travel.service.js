@@ -5,7 +5,7 @@ const createTravel = async (reqBody) => {
 }
 
 const getTravelList = async (req, res) => {
-    return Travel.find({ $or: [{ is_active: false }] });
+    return Travel.find({ $or: [{ is_active: true }] });
 }
 
 const deleteRecord = async (travelId) => {

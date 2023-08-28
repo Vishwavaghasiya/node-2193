@@ -5,7 +5,7 @@ const createPharmacy = async (reqBody) => {
 }
 
 const getPharmacyList = async (req, res) => {
-    return Pharmacy.find({ $or: [{ is_active: false }] });
+    return Pharmacy.find({ $or: [{ is_active: true }] });
 }
 
 const deleteRecord = async (pharmacyId) => {

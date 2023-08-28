@@ -1,10 +1,13 @@
 const express = require('express');
 const { hotelController } = require('../../controllers');
+const { hotelValidation } = require("../../validation");
+const validate = require("../../middlewares/validate");
 
 const router = express.Router();
 
 router.post(
     "/hotel-data",
+    validate(hotelValidation.getHotel),
     hotelController.createHotel
 );
 

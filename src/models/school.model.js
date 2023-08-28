@@ -17,33 +17,29 @@ const schoolSchema = new mongoose.Schema(
         students: {
             type: String,
             trim: true,
-            age: {
-                type: String,
-                trim: true,
-            },
-            grade: {
-                type: String,
-                trim: true,
-            }
+        },
+        grade: {
+            type: String,
+            trim: true,
         },
         teachers: {
             type: String,
             trim: true,
-            subjects : {
-                type : String,
-                trim : true,
-            },
         },
-        is_active : {
-            type : Boolean,
-            default : true,
+        subjects: {
+            type: String,
+            trim: true,
+        },
+        is_active: {
+            type: Boolean,
+            default: true,
         },
     },
     {
-        timestamps : true,
-        versionKey : false
+        timestamps: true,
+        versionKey: false
     }
 );
 
-const School = mongoose.model('school' , schoolSchema);
+const School = mongoose.model('school', schoolSchema);
 module.exports = School

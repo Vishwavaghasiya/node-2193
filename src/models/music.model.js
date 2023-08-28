@@ -43,7 +43,7 @@ const musicSchema = new mongoose.Schema(
             trim: true,
         },
         playCount: {
-            type: String,
+            type: Number,
             trim: true,
         },
         rating: {

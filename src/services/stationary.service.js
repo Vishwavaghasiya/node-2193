@@ -5,7 +5,7 @@ const createStationary = async (reqBody) => {
 }
 
 const getStationaryList = async (req, res) => {
-    return Stationary.find({ $or: [{ is_active: false }] });
+    return Stationary.find({ $or: [{ is_active: true }] });
 }
 
 const deleteRecord = async (stationaryId) => {

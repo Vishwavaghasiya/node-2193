@@ -6,17 +6,10 @@ const createSchool = {
             schoolName: Joi.string().required().trim(),
             address: Joi.string().required().trim(),
             principal: Joi.string().required().trim(),
-            students: Joi.array().items(
-                Joi.object({
-                    age: Joi.number().required(),
-                    grade: Joi.string().required().trim()
-                })
-            ),
-            teachers:Joi.array().items(
-                Joi.object({
-                    subjects: Joi.array().items(Joi.string().required().trim()).required()
-                })
-            )
+            students: Joi.string().required().trim(),
+            teachers: Joi.string().required().trim(),
+            grade: Joi.string().required().trim(),
+            subjects: Joi.string().required().trim()
         }
     )
 }

@@ -23,20 +23,6 @@ const travelSchema = new mongoose.Schema(
             type : String,
             trim : true,
         },
-        accommodation : {
-            type : String,
-            trim : true,
-            checkInDate : {
-                type : String,
-                format : date,
-                trim : true,
-            },
-            checkOutDate : {
-                type : String,
-                format : date,
-                trim : true,
-            }
-        },
         is_active : {
             type : Boolean,
             trim : true,

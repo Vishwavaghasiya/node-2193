@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema(
             type: String,
             trim: true,
         },
-        createdAt: {
+        is_active: {
             type: Boolean,
             default: true,
         },
@@ -29,6 +29,5 @@ const userSchema = new mongoose.Schema(
     }
 );
 
-// const User = module.exports = mongoose.model('user', userSchema);
 const User = mongoose.model("users", userSchema);
 module.exports = User;
