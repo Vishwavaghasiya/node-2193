@@ -13,9 +13,20 @@ router.post(
 
 router.get(
     "/mobile-list",
-    // validate(mobileValidation.getMobileList),
     mobileController.getMobileList
 );
+
+/** Get mobile details by id */
+router.get(
+    "/mobile-details/:mobileId",
+    mobileController.getMobileDetails
+)
+
+/** Update record */
+router.put(
+    "/mobile-update/:mobileId",
+    mobileController.updateMobile
+)
 
 router.delete(
     "/delete-record/:mobileId",

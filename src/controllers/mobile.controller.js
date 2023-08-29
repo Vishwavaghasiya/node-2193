@@ -42,19 +42,63 @@ const deleteRecord = async (req, res) => {
 
         const mobileExist = await mobileService.getMobileList(mobileId);
         if (!mobileExist) {
-            throw new Error("OPS !! Mobile not found !");
+            throw new Error("Mobile not found");
         }
 
         await mobileService.deleteRecord(mobileId);
 
-        res.status(200).json({ success: true, message: "Your mobile record delete successfullYyy !!" });
+        res.status(200).json({
+            success: true,
+            message: "your mobile record delete successfully !!"
+        });
     } catch (error) {
-        re.status(400).json({ success : false , message : error.message});
+        res.status(400).json({ success: false, message: error.message });
+    }
+};
+
+/**Get mobile by Id */
+const getMobileDetails = async (req, res) => {
+    try {
+        const getDetails = await mobileService.mobileById(req.params.mobileId);
+        if (!getDetails) {
+            throw new Error("Mobile not Found !!");
+        }
+
+        res.status(200).json({
+            success: true,
+            message: "You wonna get mobile details successfullYyyy !!",
+            data: { getDetails }
+        });
+    } catch (error) {
+        res.status(400).json({ success: false, message: error.message });
+    }
+}
+
+/**Update record */
+const updateMobile = async (req, res) => {
+    try {
+        const mobileId = req.params.mobileId;
+
+        const mobileEx = await mobileService.mobileById(mobileId);
+        if (!mobileEx) {
+            throw new Error("Mobile not found !!");
+        }
+
+        await mobileService.updateMobile(mobileId, req.body);
+
+        res.status(200).json({
+            success: true,
+            message: "Your mobile details update successfullYyy !!"
+        });
+    } catch (error) {
+        res.status(400).json({ success: false, message: error.message });
     }
 }
 
 module.exports = {
     createMobile,
     getMobileList,
-    deleteRecord
-}
+    deleteRecord,
+    getMobileDetails,
+    updateMobile
+};
