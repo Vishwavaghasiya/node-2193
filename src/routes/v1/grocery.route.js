@@ -18,6 +18,18 @@ router.get(
     groceryController.getGroceryList
 );
 
+/** Get grocery details by id */
+router.get(
+    "/grocery-details/:groceryId",
+    groceryController.getGroceryDetails
+)
+
+/** Update record */
+router.put(
+    "/grocery-update/:groceryId",
+    groceryController.updateGrocery
+)
+
 /** Delete Grocery */
 router.delete(
     '/delete-grocery/:groceryId',

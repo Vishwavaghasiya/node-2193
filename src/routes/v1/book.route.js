@@ -18,6 +18,18 @@ router.get(
     bookController.getBookList
 );
 
+/** Get book details by id */
+router.get(
+    "/book-details/:bookId",
+    bookController.getBookDetails
+)
+
+/** Update record */
+router.put(
+    "/book-update/:bookId",
+    bookController.updateBook
+)
+
 /** Delete book */
 router.delete(
     "/delete-book/:bookId",

@@ -18,6 +18,18 @@ router.get(
     busController.getBusList
 );
 
+/** Get bus details by id */
+router.get(
+    "/bus-details/:busId",
+    busController.getBusDetails
+)
+
+/** Update record */
+router.put(
+    "/bus-update/:busId",
+    busController.updatebus
+)
+
 /** Delete bus */
 router.delete(
     "/delete-bus/:busId",

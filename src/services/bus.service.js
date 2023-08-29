@@ -12,13 +12,18 @@ const deleteBus = async (busId) => {
     return Bus.findByIdAndDelete(busId);
 };
 
-const getBusById = async (busId) => {
+const getBusDetails = async (busId) => {
     return Bus.findById(busId);
 };
+
+const updateBus = async (busId, updateBody) => {
+    return Bus.findByIdAndUpdate(busId, { $set: updateBody });
+}
 
 module.exports = {
     createBus,
     getBusList,
     deleteBus,
-    getBusById
+    getBusDetails,
+    updateBus
 }

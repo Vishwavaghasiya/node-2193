@@ -12,13 +12,18 @@ const deleteBook = async (bookId) => {
   return Book.findByIdAndDelete(bookId);
 };
 
-const getBookById = async (bookId) => {
+const getBookDetails = async (bookId) => {
   return Book.findById(bookId);
 };
+
+const updateBook = async (bookId, updateBody) => {
+  return Book.findByIdAndUpdate(bookId, { $set: updateBody });
+}
 
 module.exports = {
   createBook,
   getBookList,
   deleteBook,
-  getBookById,
+  updateBook,
+  getBookDetails
 }
