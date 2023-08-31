@@ -16,9 +16,14 @@ const pharmacyById = async (pharmacyId) => {
     return Pharmacy.findById(pharmacyId);
 }
 
+const updatePharmacy = async (pharmacyId, updateBody) => {
+    return Pharmacy.findByIdAndUpdate(pharmacyId, { $set: updateBody });
+}
+
 module.exports = {
     createPharmacy,
     getPharmacyList,
     deleteRecord,
-    pharmacyById
+    pharmacyById,
+    updatePharmacy
 }

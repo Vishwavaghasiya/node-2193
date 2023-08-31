@@ -16,9 +16,14 @@ const schoolById = async (schoolId) => {
     return School.findById(schoolId);
 }
 
+const updateSchool = async (schoolId , updateBody) => {
+    return School.findByIdAndUpdate(schoolId, { $set: updateBody });
+}
+
 module.exports = {
     createSchool,
     getSchoolList,
     deleteRecord,
-    schoolById
+    schoolById,
+    updateSchool
 }

@@ -16,6 +16,18 @@ router.get(
     musicController.getMusicList
 );
 
+/** Get music details by id */
+router.get(
+    "/music-details/:musicId",
+    musicController.getMusicDetails
+)
+
+/**update music */
+router.put(
+    "/music-update/:musicId",
+    musicController.updateMusic
+)
+
 router.delete(
     "/delete-music/:musicId",
     musicController.deleteRecord

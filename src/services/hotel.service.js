@@ -16,9 +16,14 @@ const getHotelById = async (hotelId) => {
     return Hotel.findById(hotelId);
 };
 
+const updateHotel = async (hotelId, updateBody) => {
+    return Hotel.findByIdAndUpdate(hotelId, { $set: updateBody });
+}
+
 module.exports = {
     createHotel,
     getHotelList,
     deleteHotel,
-    getHotelById
+    getHotelById,
+    updateHotel
 }

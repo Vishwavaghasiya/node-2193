@@ -16,6 +16,18 @@ router.get(
     jewelleryController.getJewelleryList
 );
 
+/** Get jewellery details by id */
+router.get(
+    "/jewellery-details/:jewelleryId",
+    jewelleryController.getJewelleryDetails
+)
+
+/**update jewellery */
+router.put(
+    "/jewellery-update/:jewelleryId",
+    jewelleryController.updateJewellery
+)
+
 router.delete(
     "/delete-jewellery/:jewelleryId",
     jewelleryController.deleteRecord

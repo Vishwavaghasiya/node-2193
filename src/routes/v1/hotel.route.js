@@ -16,6 +16,27 @@ router.get(
     hotelController.getHotelList
 );
 
+/** Get hotel details by id */
+router.get(
+    "/hotel-details/:hotelId",
+    hotelController.getHotelDetails
+)
+
+router.put(
+    "/hotel-update/:hotelId",
+    hotelController.updateHotel
+)
+
+router.get(
+    "/hotel-details/:hotelId",
+    hotelController.getHotelDetails
+)
+
+router.put(
+    "/hotel-update/:hotelId",
+    hotelController.updateHotel
+)
+
 router.delete(
     "/delete-hotel/:hotelId",
     hotelController.deleteRecord

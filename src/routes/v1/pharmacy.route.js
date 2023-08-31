@@ -16,6 +16,17 @@ router.get(
     pharmacyController.getPharmacyList
 );
 
+/** Get pharmacy by id */
+router.get(
+    "/pharmacy-details/:pharmacyId",
+    pharmacyController.getPharmacyDetails
+)
+
+/** Update record */
+router.put(
+    "/pharmacy-update/:pharmacyId",
+    pharmacyController.updatePharmacy
+)
 router.delete(
     "/delete-pharmacy/:pharmacyId",
     pharmacyController.deleteRecord

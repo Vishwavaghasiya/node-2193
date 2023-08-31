@@ -36,6 +36,45 @@ const getUserList = async (req,res) => {
     }
 }
 
+/**get user by id */
+const getUserDetails = async (req , res) => {
+    try {
+        const getDetails = await userService.userById(req.params.userId);
+        if(!getDetails) {
+            throw new Error ("User not Found !");
+        }
+
+        res.status(200).json({
+            success : true,
+            message : "Your record is successfully get by id !",
+            data : {getDetails}
+        });
+    } catch (error) {
+        res.status(400).json({success : false , message : error.message});
+    }
+}
+
+/**Update user */
+const updateUser = async(req, res) => {
+    try {
+        const userId = req.params.userId;
+
+        const userEx = await userService.userById(userId);
+        if(!userEx) {
+            throw new Error("User not found !");
+        }
+
+        await userService.updateUser(userId , req.body);
+
+        res.stauts(200).json({
+            success : true,
+            message : "Your user record is update successfully !"
+        });
+    } catch (error) {
+        res.status(400).json({success : false , message : error.message});
+    }
+}
+
 /** delete record */
 const deleteRecord = async (req, res) => {
     try {
@@ -63,5 +102,7 @@ const deleteRecord = async (req, res) => {
 module.exports = {
     createUser,
     getUserList,
+    getUserDetails,
+    updateUser,
     deleteRecord
 }

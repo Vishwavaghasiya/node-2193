@@ -34,6 +34,46 @@ const getPharmacyList = async (req, res) => {
     }
 };
 
+/**Get pharmacy by id */
+const getPharmacyDetails = async (req , res) => {
+    try {
+        const getDetails = await pharmacyService.pharmacyById(req.params.pharmacyId);
+
+        if(!getDetails) {
+            throw new Error("Pharmacy record not found !");
+        }
+
+        res.status(200).json({
+            succsess : true,
+            message : "You wonna get pharmacy details successfullYyy !!",
+            data : {getDetails}
+        })
+    } catch (error) {
+        res.status(400).json({ succsess : false , message : error.message});
+    }
+}
+
+/**update record */
+const updatePharmacy = async (req , res) => {
+    try {
+        const pharmacyId = req.params.pharmacyId;
+
+        const pharmacyEx = await pharmacyService.getPharmacyById(pharmacyId);
+        if(!pharmacyEx) {
+            throw new Error("Pharmacy not found !!");
+        }
+
+        await pharmacyService.updatePharmacy(pharmacyId , req.body);
+
+        res.status(200).json({
+            succsess : true,
+            message : "You wonna get pharmacy id by record successfullYyy !!"
+        });
+    } catch (error) {
+        res.status(400).json({succsess : false , message : error.message});
+    }
+}
+
 /** delete record */
 const deleteRecord = async (req, res) => {
     try {
@@ -58,5 +98,7 @@ const deleteRecord = async (req, res) => {
 module.exports = {
     createPharmacy,
     getPharmacyList,
-    deleteRecord
+    deleteRecord,
+    getPharmacyDetails,
+    updatePharmacy
 }

@@ -1,6 +1,6 @@
 const { movieService } = require('../services');
 
-/** create movie controller */
+/** create movie */
 const createMovie = async (req, res) => {
     try {
         const reqBody = req.body;
@@ -44,6 +44,45 @@ const getMovieList = async (req, res) => {
     }
 }
 
+/**Get movie by Id */
+const getMovieDetails = async (req, res) => {
+    try {
+        const getDetails = await movieService.getMovieById(req.params.movieId);
+        if (!getDetails) {
+            throw new Error("Movie not Found !!");
+        }
+
+        res.status(200).json({
+            success: true,
+            message: "You wonna get movie details successfullYyyy !!",
+            data: { getDetails }
+        });
+    } catch (error) {
+        res.status(400).json({ success: false, message: error.message });
+    }
+}
+
+/**Update record */
+const updateMovie = async (req, res) => {
+    try {
+        const movieId = req.params.movieId;
+
+        const movieEx = await movieService.updateMovie(movieId);
+        if (!movieEx) {
+            throw new Error("movie not found !!");
+        }
+
+        await movieService.updateMovie(movieId, req.body);
+
+        res.status(200).json({
+            success: true,
+            message: "Your movie details update successfullYyy !!"
+        });
+    } catch (error) {
+        res.status(400).json({ success: false, message: error.message });
+    }
+}
+
 /** delete movie data by Id */
 const deleteRecord = async (req, res) => {
     try {
@@ -71,5 +110,7 @@ const deleteRecord = async (req, res) => {
 module.exports = {
     createMovie,
     getMovieList,
+    getMovieDetails,
+    updateMovie,
     deleteRecord
 }

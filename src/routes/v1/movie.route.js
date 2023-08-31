@@ -16,6 +16,18 @@ router.get(
     movieController.getMovieList
 );
 
+/** Get movie details by id */
+router.get(
+    "/movie-details/:movieId",
+    movieController.getMovieDetails
+)
+
+/**update movie */
+router.put(
+    "/movie-update/:movieId",
+    movieController.updateMovie
+)
+
 router.delete(
     "/delete-movie/:movieId",
     movieController.deleteRecord

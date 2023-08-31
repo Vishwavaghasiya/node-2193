@@ -16,9 +16,14 @@ const getMovieById = async (movieId) => {
     return Movie.findById(movieId);
 };
 
+const updateMovie = async (movieId, updateBody) => {
+    return Movie.findByIdAndUpdate(movieId, { $set: updateBody });
+}
+
 module.exports = {
     createMovie,
     getMovieList,
     deleteRecord,
-    getMovieById
+    getMovieById,
+    updateMovie
 }

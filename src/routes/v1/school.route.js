@@ -16,6 +16,18 @@ router.get(
     schoolController.getSchoolList
 );
 
+/** Get School by id */
+router.get(
+    "/shool-details/:schoolId",
+    schoolController.getSchoolDetails
+);
+
+/** Update record */
+router.put(
+    "/school-update/:schoolId",
+    schoolController.updateSchool
+)
+
 router.delete(
     "/delete-school/:schoolId",
     schoolController.deleteRecord

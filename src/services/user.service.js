@@ -16,9 +16,14 @@ const userById = async (userId) => {
   return User.findById(userId);
 }
 
+const updateUser = async (userId , updateRecord) => {
+  return User.findByIdAndUpdate(userId , {$set : updateRecord});
+}
+
 module.exports = {
   createUser,
   getUserList,
   deleteRecord,
-  userById
+  userById,
+  updateUser
 }

@@ -16,9 +16,14 @@ const getMusicById = async (musicId) => {
     return Music.findById(musicId);
 }
 
+const updateMusic = async (musicId) => {
+    return Music.findByIdAndUpdate(musicId);
+}
+
 module.exports = {
     createMusic,
     getMusicList,
     deleteRecord,
-    getMusicById
+    getMusicById,
+    updateMusic
 }
