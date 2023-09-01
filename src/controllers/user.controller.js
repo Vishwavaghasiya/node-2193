@@ -66,7 +66,7 @@ const updateUser = async(req, res) => {
 
         await userService.updateUser(userId , req.body);
 
-        res.stauts(200).json({
+        res.status(200).json({
             success : true,
             message : "Your user record is update successfully !"
         });

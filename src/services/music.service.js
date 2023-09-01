@@ -16,8 +16,8 @@ const getMusicById = async (musicId) => {
     return Music.findById(musicId);
 }
 
-const updateMusic = async (musicId) => {
-    return Music.findByIdAndUpdate(musicId);
+const updateMusic = async (musicId, updateRecord) => {
+    return Music.findByIdAndUpdate(musicId, { $set: updateRecord });
 }
 
 module.exports = {

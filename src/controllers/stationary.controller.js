@@ -58,18 +58,18 @@ const updateStationary = async (req, res) => {
         const stationaryId = req.params.stationaryId;
 
         const stationaryEx = await stationaryService.stationaryById(stationaryId);
-        if(!stationaryEx) {
+        if (!stationaryEx) {
             throw new Error("Stationary not Found !!");
         }
 
-        await stationaryService.updateStationary(stationaryId , req.body);
+        await stationaryService.updateStationary(stationaryId, req.body);
 
         res.status(200).json({
-            success : true,
-            messsge : "Your stationary record update successfullYy !"
+            success: true,
+            messsge: "Your stationary record update successfullYy !"
         });
     } catch (error) {
-        res.status(400).json({ success : false , message : error.message});
+        res.status(400).json({ success: false, message: error.message });
     }
 }
 

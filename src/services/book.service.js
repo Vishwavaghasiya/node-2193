@@ -12,7 +12,7 @@ const deleteBook = async (bookId) => {
   return Book.findByIdAndDelete(bookId);
 };
 
-const getBookDetails = async (bookId) => {
+const bookById = async (bookId) => {
   return Book.findById(bookId);
 };
 
@@ -25,5 +25,5 @@ module.exports = {
   getBookList,
   deleteBook,
   updateBook,
-  getBookDetails
+  bookById
 }

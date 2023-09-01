@@ -1,4 +1,3 @@
-const { error } = require("console");
 const { schoolService } = require("../services");
 
 /** create record of school */
@@ -52,28 +51,28 @@ const getSchoolDetails = async (req, res) => {
             data: { getId }
         });
     } catch (error) {
-        res.status(400).json({ success : false , message : error.message});
+        res.status(400).json({ success: false, message: error.message });
     }
 }
 
 /**Update record */
-const updateSchool = async (req , res) => {
+const updateSchool = async (req, res) => {
     try {
         const schoolId = req.params.schoolId;
 
         const schoolEx = await schoolService.schoolById(schoolId);
-        if(!schoolEx) {
+        if (!schoolEx) {
             throw new Error("Your record is not found !");
         }
 
-        await schoolService.updateSchool(schoolId , req.body);
+        await schoolService.updateSchool(schoolId, req.body);
 
-        res.staus(200).json({
-            success : true,
-            message : "Your record is update successfullYy !!"
+        res.status(200).json({
+            success: true,
+            message: "Your record is update successfullYy !!"
         })
     } catch (error) {
-        res.status(400).json({ success : false , message : error.message});
+        res.status(400).json({ success: false, message: error.message });
     }
 }
 

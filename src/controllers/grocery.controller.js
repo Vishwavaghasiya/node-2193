@@ -41,7 +41,7 @@ const getGroceryList = async (req, res) => {
 /**Get grocery by Id */
 const getGroceryDetails = async (req, res) => {
     try {
-        const getDetails = await groceryService.groceryById(req.params.groceryId);
+        const getDetails = await groceryService.getGroceryById(req.params.groceryId);
         if (!getDetails) {
             throw new Error("grocery not Found !!");
         }

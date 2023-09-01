@@ -2,8 +2,11 @@ const Joi = require("joi");
 const pick = require("../helpers/picks");
 
 const validate = (schema) => (req, res, next) => {
+
     const validSchema = pick(schema, ["params", "query", "body"]);
+
     const object = pick(req, Object.keys(validSchema));
+
     const { value, error } = Joi.compile(validSchema)
         .prefs({ errors: { label: "key" }, abortEarly: false })
         .validate(object);
@@ -12,10 +15,11 @@ const validate = (schema) => (req, res, next) => {
         const errorMessage = error.details
             .map((details) => details.message)
             .join(", ");
-        return next(new Error(errorMessage));
+        return next();
     }
+    console.log(req, value, 'req, value');
     Object.assign(req, value);
     return next();
 };
 
-module.exports = validate;
+module.exports = validate

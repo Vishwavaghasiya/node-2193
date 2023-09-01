@@ -1,14 +1,14 @@
 const express = require("express");
-const { busValidation } = require("../../validation");
 const { busController } = require("../../controllers");
+const { busValidation } = require("../../validation");
 const validate = require("../../middlewares/validate");
 
 const router = express.Router();
 
 /** create bus */
 router.post(
-    "/bus-data",
-    validate(busValidation.getBus),
+    "/bus-create",
+    validate(busValidation.createBuss),
     busController.createBus
 );
 

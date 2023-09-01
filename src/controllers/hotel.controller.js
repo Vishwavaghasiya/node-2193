@@ -72,7 +72,7 @@ const updateHotel = async (req, res) => {
     try {
         const hotelId = req.params.hotelId;
 
-        const hotelEx = await hotelService.updateHotel(hotelId);
+        const hotelEx = await hotelService.getHotelById(hotelId);
         if (!hotelEx) {
             throw new Error("hotel not found !!");
         }

@@ -66,7 +66,7 @@ const updateJewellery = async (req, res) => {
     try {
         const jewelleryId = req.params.jewelleryId;
 
-        const jewelleryEx = await jewelleryService.updateJewellery(jewelleryId);
+        const jewelleryEx = await jewelleryService.getJewelleryById(jewelleryId);
         if (!jewelleryEx) {
             throw new Error("jewellery not found !!");
         }

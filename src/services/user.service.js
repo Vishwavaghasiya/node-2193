@@ -4,7 +4,7 @@ const createUser = async (reqBody) => {
   return User.create(reqBody);
 }
 
-const getUserList = async (req, res) =>{
+const getUserList = async (req, res) => {
   return User.find({ $or: [{ is_active: true }] });
 }
 
@@ -16,8 +16,8 @@ const userById = async (userId) => {
   return User.findById(userId);
 }
 
-const updateUser = async (userId , updateRecord) => {
-  return User.findByIdAndUpdate(userId , {$set : updateRecord});
+const updateUser = async (userId, updateRecord) => {
+  return User.findByIdAndUpdate(userId, { $set: updateRecord });
 }
 
 module.exports = {

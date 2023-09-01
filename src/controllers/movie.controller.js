@@ -67,7 +67,7 @@ const updateMovie = async (req, res) => {
     try {
         const movieId = req.params.movieId;
 
-        const movieEx = await movieService.updateMovie(movieId);
+        const movieEx = await movieService.getMovieById(movieId);
         if (!movieEx) {
             throw new Error("movie not found !!");
         }

@@ -34,7 +34,7 @@ const getTravelList = async (req, res) => {
     }
 }
 
-/** list by id */
+/**get list by id */
 const getTravelDetails = async (req, res) => {
     try {
         const getDetails = await travelService.travelByID(req.params.travelId);
@@ -64,12 +64,12 @@ const updateTravel = async (req, res) => {
 
         await travelService.updateTravel(travelId, req.body);
 
-        res.staus(200).json({
+        res.status(200).json({
             success: true,
             message: "your record is get successfully by travel id !"
         })
     } catch (error) {
-
+        res.status(400).json({ success: false, message: error.message });
     }
 }
 

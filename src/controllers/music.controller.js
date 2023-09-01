@@ -62,7 +62,7 @@ const updateMusic = async (req, res) => {
     try {
         const musicId = req.params.musicId;
 
-        const musicEx = await musicService.updateMusic(musicId);
+        const musicEx = await musicService.getMusicById(musicId);
         if (!musicEx) {
             throw new Error("Music not found !!");
         }

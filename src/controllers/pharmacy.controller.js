@@ -58,7 +58,7 @@ const updatePharmacy = async (req , res) => {
     try {
         const pharmacyId = req.params.pharmacyId;
 
-        const pharmacyEx = await pharmacyService.getPharmacyById(pharmacyId);
+        const pharmacyEx = await pharmacyService.pharmacyById(pharmacyId);
         if(!pharmacyEx) {
             throw new Error("Pharmacy not found !!");
         }
@@ -67,7 +67,7 @@ const updatePharmacy = async (req , res) => {
 
         res.status(200).json({
             succsess : true,
-            message : "You wonna get pharmacy id by record successfullYyy !!"
+            message : "Your pharmacy record is update successfully !!"
         });
     } catch (error) {
         res.status(400).json({succsess : false , message : error.message});

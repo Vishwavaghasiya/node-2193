@@ -12,7 +12,7 @@ const deleteBus = async (busId) => {
     return Bus.findByIdAndDelete(busId);
 };
 
-const getBusDetails = async (busId) => {
+const busById = async (busId) => {
     return Bus.findById(busId);
 };
 
@@ -24,6 +24,6 @@ module.exports = {
     createBus,
     getBusList,
     deleteBus,
-    getBusDetails,
+    busById,
     updateBus
 }

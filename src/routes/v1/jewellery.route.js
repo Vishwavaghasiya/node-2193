@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.post(
     "/jewellery-data",
-    validate(jewelleryValidation.getJewelleryList),
+    validate(jewelleryValidation.createJewellery),
     jewelleryController.createJewellery
 );
 
