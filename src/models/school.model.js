@@ -30,6 +30,10 @@ const schoolSchema = new mongoose.Schema(
             type: String,
             trim: true,
         },
+        book: {
+            type: mongoose.Types.ObjectId,
+            ref: "book",
+        },
         is_active: {
             type: Boolean,
             default: true,

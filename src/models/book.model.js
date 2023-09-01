@@ -1,10 +1,14 @@
 const mongoose = require('mongoose');
 
-const bookSchema = new mongoose.Schema(
+const stationarySchema = new mongoose.Schema(
     {
-        book_name: {
+        stationary_name: {
             type: String,
             trim: true,
+        },
+        book_name: {
+            type: String,
+            trim: true
         },
         auther_name: {
             type: String,
@@ -22,9 +26,13 @@ const bookSchema = new mongoose.Schema(
             type: Number,
             trim: true,
         },
-        publisher : {
-            type : String,
-            trim : true
+        publisher: {
+            type: String,
+            trim: true
+        },
+        stationary: {
+            type: mongoose.Types.ObjectId,
+            ref: "stationary",
         },
         is_active: {
             type: Boolean,
@@ -37,5 +45,5 @@ const bookSchema = new mongoose.Schema(
     },
 );
 
-const Book = mongoose.model('book', bookSchema);
-module.exports = Book
+const stationary = mongoose.model('stationary', stationarySchema);
+module.exports = stationary

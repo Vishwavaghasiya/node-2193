@@ -30,6 +30,10 @@ const hotelSchema = new mongoose.Schema(
             type : Number,
             trim : true,
         },
+        user: {
+            type: mongoose.Types.ObjectId,
+            ref: "user",
+        },
         is_active : {
             type : Boolean,
             default : true,

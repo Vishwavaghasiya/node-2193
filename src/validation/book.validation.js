@@ -3,6 +3,7 @@ const Joi = require('joi');
 const getBook = {
     body: Joi.object().keys(
         {
+            stationary_name : Joi.string().required().trim(),
             book_name: Joi.string().required().trim(),
             auther_name: Joi.string().required().trim(),
             language: Joi.string().required().trim(),

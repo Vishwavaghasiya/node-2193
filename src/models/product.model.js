@@ -3,21 +3,29 @@ const mongoose = require("mongoose");
 const productSchema = new mongoose.Schema(
     {
         product_type: {
-            type : String,
+            type: String,
             trim: true,
         },
         product_name: {
-            type : String,
+            type: String,
             trim: true,
         },
         price: {
-            type : Number,
+            type: Number,
             trim: true,
+        },
+        category: {
+            type: mongoose.Types.ObjectId,
+            ref: "category",
+        },
+        is_active: {
+            type: Boolean,
+            default: true
         }
     },
     {
-        timeStamps : true,
-        versionKey : false,
+        timeStamps: true,
+        versionKey: false,
     }
 );
 

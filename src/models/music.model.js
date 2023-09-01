@@ -50,6 +50,14 @@ const musicSchema = new mongoose.Schema(
             type: Number,
             trim: true,
         },
+        movie: {
+            type: mongoose.Types.ObjectId,
+            ref: "movie",
+        },
+        user: {
+            type: mongoose.Types.ObjectId,
+            ref: "user",
+        },
         is_active: {
             type: Boolean,
             default: true

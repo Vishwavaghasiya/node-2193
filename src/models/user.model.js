@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const userSchema = new mongoose.Schema(
+const mobileSchema = new mongoose.Schema(
     {
         first_name: {
             type: String,
@@ -18,6 +18,22 @@ const userSchema = new mongoose.Schema(
             type: String,
             trim: true,
         },
+        travel: {
+            type: mongoose.Types.ObjectId,
+            ref: "travel",
+        },
+        mobile: {
+            type: mongoose.Types.ObjectId,
+            ref: "mobile",
+        },
+        category: {
+            type: mongoose.Types.ObjectId,
+            ref: "category",
+        },
+        pharmacy: {
+            type: mongoose.Types.ObjectId,
+            ref: "pharmacy",
+        },
         is_active: {
             type: Boolean,
             default: true,
@@ -29,5 +45,5 @@ const userSchema = new mongoose.Schema(
     }
 );
 
-const User = mongoose.model("users", userSchema);
-module.exports = User;
+const mobile = mongoose.model("mobiles", mobileSchema);
+module.exports = mobile;

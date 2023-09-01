@@ -34,6 +34,10 @@ const jewellerySchema = new mongoose.Schema(
             type : String,
             trim : true,
         },
+        user: {
+            type: mongoose.Types.ObjectId,
+            ref: "user",
+        },
         is_active : {
             type : Boolean,
             trim : true,

@@ -54,6 +54,10 @@ const mobileSchema = new mongoose.Schema(
             type: String,
             trim: true
         },
+        category: {
+            type: mongoose.Types.ObjectId,
+            ref: "category",
+        },
         is_active: {
             type: Boolean,
             default: true
