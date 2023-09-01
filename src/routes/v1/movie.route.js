@@ -5,12 +5,14 @@ const validate = require("../../middlewares/validate");
 
 const router = express.Router();
 
+/**Create record */
 router.post(
     "/movie-data",
     validate(movieValidation.createMovie),
     movieController.createMovie
 );
 
+/**Get list */
 router.get(
     "/movie-list",
     movieController.getMovieList
@@ -28,6 +30,7 @@ router.put(
     movieController.updateMovie
 )
 
+/**Delete record */
 router.delete(
     "/delete-movie/:movieId",
     movieController.deleteRecord

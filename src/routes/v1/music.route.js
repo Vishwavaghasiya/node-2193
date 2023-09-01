@@ -5,12 +5,14 @@ const validate = require("../../middlewares/validate");
 
 const router = express.Router();
 
+/**Create record */
 router.post(
     "/music-data",
     validate(musicValidation.createMusic),
     musicController.createMusic
 );
 
+/**Get list */
 router.get(
     "/music-list",
     musicController.getMusicList
@@ -28,6 +30,7 @@ router.put(
     musicController.updateMusic
 )
 
+/**Delete record */
 router.delete(
     "/delete-music/:musicId",
     musicController.deleteRecord

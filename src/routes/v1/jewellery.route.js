@@ -5,29 +5,32 @@ const validate = require("../../middlewares/validate");
 
 const router = express.Router();
 
+/**create record */
 router.post(
     "/jewellery-data",
     validate(jewelleryValidation.createJewellery),
     jewelleryController.createJewellery
 );
 
+/**get list */
 router.get(
     "/jewellery-list",
     jewelleryController.getJewelleryList
 );
 
-/** Get jewellery details by id */
+/** Get details by id */
 router.get(
     "/jewellery-details/:jewelleryId",
     jewelleryController.getJewelleryDetails
 )
 
-/**update jewellery */
+/**update */
 router.put(
     "/jewellery-update/:jewelleryId",
     jewelleryController.updateJewellery
 )
 
+/**delete record */
 router.delete(
     "/delete-jewellery/:jewelleryId",
     jewelleryController.deleteRecord

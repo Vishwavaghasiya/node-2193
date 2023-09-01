@@ -12,7 +12,7 @@ router.post(
     stationaryController.createStationary
 );
 
-/**Get list */
+/** Get list */
 router.get(
     "/stationary-list",
     stationaryController.getStationaryList

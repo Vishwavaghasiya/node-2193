@@ -5,12 +5,14 @@ const validate = require("../../middlewares/validate");
 
 const router = express.Router();
 
+/**create hotel */
 router.post(
     "/hotel-data",
     validate(hotelValidation.getHotel),
     hotelController.createHotel
 );
 
+/** get list */
 router.get(
     "/hotel-list",
     hotelController.getHotelList
@@ -22,21 +24,13 @@ router.get(
     hotelController.getHotelDetails
 )
 
+/**update record */
 router.put(
     "/hotel-update/:hotelId",
     hotelController.updateHotel
 )
 
-router.get(
-    "/hotel-details/:hotelId",
-    hotelController.getHotelDetails
-)
-
-router.put(
-    "/hotel-update/:hotelId",
-    hotelController.updateHotel
-)
-
+/**delete record */
 router.delete(
     "/delete-hotel/:hotelId",
     hotelController.deleteRecord

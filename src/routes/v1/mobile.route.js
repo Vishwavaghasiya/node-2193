@@ -5,12 +5,14 @@ const validate = require('../../middlewares/validate');
 
 const router = express.Router();
 
+/**create record */
 router.post(
     "/mobile-data",
     validate(mobileValidation.createMobile),
     mobileController.createMobile
 );
 
+/**Get list */
 router.get(
     "/mobile-list",
     mobileController.getMobileList
@@ -28,6 +30,7 @@ router.put(
     mobileController.updateMobile
 )
 
+/**delete record */
 router.delete(
     "/delete-record/:mobileId",
     mobileController.deleteRecord

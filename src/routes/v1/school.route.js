@@ -5,12 +5,14 @@ const validate = require("../../middlewares/validate");
 
 const router = express.Router();
 
+/** Create record */
 router.post(
     "/school-data",
     validate(schoolValidation.createSchool),
     schoolController.createSchool
 );
 
+/** Get list */
 router.get(
     "/school-list",
     schoolController.getSchoolList
@@ -26,8 +28,9 @@ router.get(
 router.put(
     "/school-update/:schoolId",
     schoolController.updateSchool
-)
+);
 
+/** Delete record */
 router.delete(
     "/delete-school/:schoolId",
     schoolController.deleteRecord

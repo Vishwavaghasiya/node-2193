@@ -5,12 +5,14 @@ const validate = require("../../middlewares/validate");
 
 const router = express.Router();
 
+/**Create record */
 router.post(
     "/user-data",
     validate(userValidation.createUser),
     userController.createUser
 );
 
+/**Get list */
 router.get(
     "/user-list",
     userController.getUserList
@@ -26,8 +28,9 @@ router.get(
 router.put(
     "/user-update/:userId",
     userController.updateUser
-)
+);
 
+/**Delete record */
 router.delete(
     "/delete-user/:userId",
     userController.deleteRecord
