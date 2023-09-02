@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const stationarySchema = new mongoose.Schema(
+const bookSchema = new mongoose.Schema(
     {
         stationary_name: {
             type: String,
@@ -45,5 +45,5 @@ const stationarySchema = new mongoose.Schema(
     },
 );
 
-const stationary = mongoose.model('stationary', stationarySchema);
-module.exports = stationary
+const Book = mongoose.model('book', bookSchema);
+module.exports = Book
