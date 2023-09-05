@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const mobileSchema = new mongoose.Schema(
+const userSchema = new mongoose.Schema(
     {
         first_name: {
             type: String,
@@ -22,9 +22,9 @@ const mobileSchema = new mongoose.Schema(
             type: mongoose.Types.ObjectId,
             ref: "travel",
         },
-        mobile: {
+        User: {
             type: mongoose.Types.ObjectId,
-            ref: "mobile",
+            ref: "User",
         },
         category: {
             type: mongoose.Types.ObjectId,
@@ -45,5 +45,5 @@ const mobileSchema = new mongoose.Schema(
     }
 );
 
-const mobile = mongoose.model("mobiles", mobileSchema);
-module.exports = mobile;
+const User = mongoose.model("user", userSchema);
+module.exports = User;

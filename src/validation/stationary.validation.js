@@ -10,7 +10,9 @@ const createStationary = {
             price: Joi.number().integer().allow(),
             stockQuantity: Joi.string().required().trim(),
             manufacturer: Joi.string().required().trim(),
-            color: Joi.string().required().trim()
+            subjects: Joi.string().required().trim(),
+            color: Joi.string().required().trim(),
+            category: Joi.string().required().trim()
         }
     )
 }

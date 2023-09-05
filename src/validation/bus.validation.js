@@ -7,7 +7,9 @@ const createBuss = {
         busNumber : Joi.string().required().trim(),
         driverName : Joi.string().required().trim(),
         departureTime : Joi.string().required().trim(),
-        arrivalTime : Joi.string().required().trim()
+        arrivalTime : Joi.string().required().trim(),
+        travel : Joi.string().required().trim(),
+        user : Joi.string().required().trim(),
     }),
 };
 

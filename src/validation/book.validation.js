@@ -9,7 +9,8 @@ const getBook = {
             language: Joi.string().required().trim(),
             review : Joi.string().required().trim(),
             price: Joi.number().integer().allow(),
-            publisher : Joi.string().required().trim()
+            publisher : Joi.string().required().trim(),
+            stationary : Joi.string().required().trim()
         }
     )
 }

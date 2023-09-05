@@ -9,7 +9,8 @@ const createSchool = {
             students: Joi.string().required().trim(),
             teachers: Joi.string().required().trim(),
             grade: Joi.string().required().trim(),
-            subjects: Joi.string().required().trim()
+            subjects: Joi.string().required().trim(),
+            book: Joi.string().required().trim()
         }
     )
 }

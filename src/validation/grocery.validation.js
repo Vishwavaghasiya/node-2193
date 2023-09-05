@@ -10,7 +10,8 @@ const createGrocery = {
         expirationDate: Joi.string().required().trim(),
         notes: Joi.string().required().trim(),
         inStock: Joi.string().required().trim(),
-        supplier: Joi.string().required().trim()
+        supplier: Joi.string().required().trim(),
+        category: Joi.string().required().trim()
     }),
 };
 

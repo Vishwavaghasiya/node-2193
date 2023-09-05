@@ -11,3 +11,5 @@ module.exports.schoolValidation = require("./school.validation");
 module.exports.stationaryValidation = require("./stationary.validation");
 module.exports.travelValidation = require("./travel.validation");
 module.exports.mobileValidation = require("./mobile.validation");
+module.exports.categoryValidation = require('./category.validation');
+module.exports.productValidation = require('./product.validation');

@@ -6,7 +6,10 @@ const createUser = {
         first_name : Joi.string().required().trim(),
         last_name : Joi.string().required().trim(),
         email : Joi.string().required().trim(),
-        address : Joi.string().required().trim()
+        travel : Joi.string().required().trim(),
+        mobile : Joi.string().required().trim(),
+        category : Joi.string().required().trim(),
+        pharmacy : Joi.string().required().trim(),
     }),
 };
 

@@ -12,6 +12,7 @@ const createJewellery = {
             price: Joi.number().integer().allow(),
             availableStock: Joi.string().required().trim(),
             designer: Joi.string().required().trim(),
+            user: Joi.string().required().trim(),
         }
     ),
 };

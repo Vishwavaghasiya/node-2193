@@ -11,3 +11,4 @@ module.exports.schoolService = require("./school.service");
 module.exports.stationaryService = require("./stationary.service");
 module.exports.travelService = require("./travel.service");
 module.exports.mobileService = require("./mobile.service");
+module.exports.categoryService = require("./category.service");

@@ -4,6 +4,7 @@ const createPharmacy = {
     body: Joi.object().keys(
         {
             pharmacyName: Joi.string().required().trim(),
+            product: Joi.string().required().trim(),
             address: Joi.string().required().trim(),
             pharmacist: Joi.string().required().trim(),
             inventory: Joi.string().required().trim(),

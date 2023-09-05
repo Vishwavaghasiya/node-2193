@@ -9,6 +9,7 @@ const getHotel = {
             starRating : Joi.string().required().trim(),
             amenities : Joi.string().required().trim(),
             rooms : Joi.string().required().trim(),
+            user : Joi.string().required().trim(),
             room_number : Joi.number().integer().allow(),
             price : Joi.number().integer().allow()
         }

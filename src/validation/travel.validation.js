@@ -7,7 +7,8 @@ const createTravel = {
             destination: Joi.string().required().trim(),
             startDate: Joi.string().required().trim(),
             endDate: Joi.string().required().trim(),
-            travelers: Joi.string().required().trim()
+            travelers: Joi.string().required().trim(),
+            bus: Joi.string().required().trim()
         }
     )
 }

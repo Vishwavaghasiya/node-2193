@@ -11,3 +11,4 @@ module.exports.schoolController = require('./school.controller');
 module.exports.stationaryController = require('./stationary.controller');
 module.exports.travelController = require('./travel.controller');
 module.exports.mobileController = require('./mobile.controller');
+module.exports.categoryController = require('./category.controller');

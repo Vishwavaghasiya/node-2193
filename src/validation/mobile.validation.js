@@ -12,11 +12,12 @@ const createMobile = {
             storageCapacity: Joi.string().required().trim(),
             displayTechnology: Joi.string().required().trim(),
             camera: Joi.string().trim(),
-            batteryCapacity: Joi.string().trim(),
-            connectivity: Joi.string().trim(),
+            batteryCapacity: Joi.string().required().trim(),
+            connectivity: Joi.string().required().trim(),
             SIMCard: Joi.string().required().trim(),
             price: Joi.number().integer().allow(),
             rating: Joi.string().required().trim(),
+            category :Joi.string().required().trim()
         }
     )
 };

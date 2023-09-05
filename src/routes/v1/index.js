@@ -13,6 +13,7 @@ const schoolRoute = require('./school.route');
 const stationaryRoute = require('./stationary.route');
 const travelRoute = require('./travel.route');
 const mobileRoute = require('./mobile.route');
+const categoryRoute = require('./category.route');
 
 const router = express.Router();
 
@@ -29,5 +30,6 @@ router.use("/school" , schoolRoute);
 router.use("/stationary" , stationaryRoute);
 router.use("/travel" , travelRoute);
 router.use("/mobile" , mobileRoute);
+router.use("/category" , categoryRoute);
 
 module.exports = router;

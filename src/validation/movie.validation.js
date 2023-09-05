@@ -8,6 +8,7 @@ const createMovie = {
             releaseDate: Joi.string().required().trim(),
             genre: Joi.string().required().trim(),
             cast: Joi.string().required().trim(),
+            music: Joi.string().required().trim(),
             durationMinutes: Joi.number().integer().allow(),
             rating: Joi.number().integer().allow()
         }
